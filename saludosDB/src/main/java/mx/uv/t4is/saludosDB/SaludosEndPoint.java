@@ -54,7 +54,7 @@ public class SaludosEndPoint
         return respuesta;
     }
 
-    @PayloadRoot(localPart = "ModificarSaludoRequest", namespace = "https://t4is.uv.mx/saludos")
+    @PayloadRoot(localPart = "BuscarSaludoRequest", namespace = "https://t4is.uv.mx/saludos")
     @ResponsePayload
     public BuscarSaludosResponse modificarSaludo()
     {
