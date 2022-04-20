@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.2 
+Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2022.04.15 a las 01:16:45 PM CDT 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="https://t4is.uv.mx/toDoList">
+    <schemaBindings map="false">
+      <package name="https.t4is_uv_mx.todolist"/>
+    </schemaBindings>
+    <bindings scd="tns:ListarActivitiesResponse">
+      <class ref="https.t4is_uv_mx.todolist.ListarActivitiesResponse"/>
+    </bindings>
+    <bindings scd="tns:CreateActivityRequest">
+      <class ref="https.t4is_uv_mx.todolist.CreateActivityRequest"/>
+    </bindings>
+    <bindings scd="tns:CreateActivityResponse">
+      <class ref="https.t4is_uv_mx.todolist.CreateActivityResponse"/>
+    </bindings>
+    <bindings scd="tns:ModificarActivityRequest">
+      <class ref="https.t4is_uv_mx.todolist.ModificarActivityRequest"/>
+    </bindings>
+    <bindings scd="tns:ModificarActivityResponse">
+      <class ref="https.t4is_uv_mx.todolist.ModificarActivityResponse"/>
+    </bindings>
+    <bindings scd="tns:BorrarActivityRequest">
+      <class ref="https.t4is_uv_mx.todolist.BorrarActivityRequest"/>
+    </bindings>
+    <bindings scd="tns:BorrarActivityResponse">
+      <class ref="https.t4is_uv_mx.todolist.BorrarActivityResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+
