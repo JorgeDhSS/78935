@@ -5,20 +5,22 @@ import java.util.ArrayList;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class SaludarControlador {
     ArrayList<Saludos> listaSaludos = new ArrayList<Saludos>();
-    @RequestMapping("/SaludarRequest")
-    public String SaludarRequest(@RequestParam(name="id") Integer id, @PathVariable("nombre") String nombreX)
+    private int cont = 1;
+
+    @RequestMapping("/SaludarRequest/{nombre}")
+    public String SaludarRequest(@PathVariable(("nombre"))String nombreX)
     {
-        Saludos saludo = new Saludos(id, nombreX);
+        Saludos saludo = new Saludos();
+        saludo.setID(cont);
+        saludo.setNombre(nombreX);
         listaSaludos.add(saludo);
-        id ++;
-        return "Hola "+nombreX;
+        cont ++;
+        return "Hola "+ nombreX;
     }
 
     @GetMapping("/BuscarSaludosRequest")
@@ -27,8 +29,8 @@ public class SaludarControlador {
         return listaSaludos;
     }
 
-    @GetMapping("/ModificarSaludoRequest")
-    public Boolean ModificarSaludoRequest(@RequestParam(name="id") Integer id, @PathVariable("nombre") String nombreX)
+    @GetMapping("/ModificarSaludoRequest/{id}/{nombre}")
+    public Boolean ModificarSaludoRequest(@PathVariable("id") int id, @PathVariable("nombre") String nombreX)
     {
         for(Saludos o : listaSaludos)
         {
@@ -42,8 +44,8 @@ public class SaludarControlador {
         return true;
     }
 
-    @GetMapping("/BorrarSaludoResponse")
-    public Boolean BorrarSaludoResponse(@RequestParam(name="id") Integer id)
+    @GetMapping("/BorrarSaludoResponse/{id}")
+    public Boolean BorrarSaludoResponse(@PathVariable("id") int id)
     {
         for(Saludos o : listaSaludos)
         {

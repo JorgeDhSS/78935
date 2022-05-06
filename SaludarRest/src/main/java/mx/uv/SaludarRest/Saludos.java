@@ -4,20 +4,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Saludos {
-    private Integer ID;
+    private int ID;
     private String nombre;
     
-    public Saludos(Integer iD, String nombre) {
-        ID = iD;
+    public Saludos(int ID, String nombre) {
+        this.ID = ID;
         this.nombre = nombre;
     }
 
-    public Integer getID() {
+    public Saludos() {
+        
+    }
+
+    public int getID() {
         return ID;
     }
 
-    public void setID(Integer iD) {
-        ID = iD;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getNombre() {
