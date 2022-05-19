@@ -1,0 +1,11 @@
+from ubuntu
+workdir /app
+expose 8080
+cmd ["java", "-jar", "buscame-0.0.1-SNAPSHOT.jar"]
+run apt-get update
+run apt-get install -y openjdk-8-jdk
+run apt-get install -y \
+ curl \
+ unzip \
+ nano
+add /root/app/buscame-0.0.1-SNAPSHOT.jar /app/buscame-0.0.1-SNAPSHOT.jar
